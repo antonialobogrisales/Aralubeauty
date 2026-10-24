@@ -27,13 +27,13 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            padding-bottom: 90px;
+            padding-bottom: 100px;
         }
 
-        /* Navbar */
+        /* Navbar con Logo Real */
         nav {
             background: var(--white);
-            padding: 15px 25px;
+            padding: 12px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -42,24 +42,34 @@
             top: 0;
             z-index: 1000;
         }
-        .nav-logo {
-            font-size: 1.4rem;
+        .nav-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-logo-img {
+            height: 45px;
+            object-fit: contain;
+        }
+        .nav-logo-text {
+            font-size: 1.3rem;
             font-weight: 800;
             color: var(--primary-dark);
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         .nav-cart-btn {
             background: var(--primary);
             color: var(--white);
             border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 9px 18px;
+            border-radius: 25px;
             font-weight: bold;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 8px;
             font-size: 0.95rem;
+            box-shadow: 0 4px 10px rgba(140, 109, 83, 0.2);
         }
 
         /* Hero Header */
@@ -67,20 +77,19 @@
             background: linear-gradient(135deg, #d4a373, #faedcd);
             color: #4a3b32;
             text-align: center;
-            padding: 60px 20px;
+            padding: 65px 20px;
             box-shadow: inset 0 -10px 20px rgba(0,0,0,0.02);
         }
         header h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
             font-weight: 800;
-            letter-spacing: 0.5px;
         }
         header p {
             font-size: 1.2rem;
             font-style: italic;
             opacity: 0.9;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
@@ -126,15 +135,19 @@
 
         .product-image-box {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #fefae0, #dda15e);
+            height: 240px;
             border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background-color: #fefae0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            margin-bottom: 15px;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .product-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .product-title {
@@ -214,7 +227,7 @@
             border-left: 4px solid var(--accent);
         }
         .testimonial-card p {
-            font-size: 0.95srem;
+            font-size: 0.95rem;
             color: #555;
             font-style: italic;
             margin-bottom: 10px;
@@ -419,9 +432,12 @@
 
     <div id="notif" class="notification">¡Producto agregado al carrito! ✨</div>
 
-    <!-- Barra Superior -->
+    <!-- Barra Superior con tu Logo Real -->
     <nav>
-        <div class="nav-logo">Aralú Beauty 🌿</div>
+        <div class="nav-logo-container">
+            <img src="Logo ARALÚ.png" alt="Aralú Beauty" class="nav-logo-img">
+            <span class="nav-logo-text">Aralú Beauty</span>
+        </div>
         <button class="nav-cart-btn" onclick="abrirCarrito()">
             🛒 Carrito (<span id="cart-count">0</span>)
         </button>
@@ -439,10 +455,12 @@
         <h2 class="section-title">Catálogo Exclusivo</h2>
         
         <div class="products-grid">
-            <!-- Producto 1 -->
+            <!-- Producto 1 (Usa tu foto IMG_1825.JPG) -->
             <div class="product-card">
                 <div>
-                    <div class="product-image-box">🧴</div>
+                    <div class="product-image-box">
+                        <img src="IMG_1825.JPG" alt="Shampoo Milagros">
+                    </div>
                     <h3 class="product-title">Shampoo Milagros</h3>
                     <p class="product-desc">Fórmula magistral especializada para frenar la caída, estimular el crecimiento acelerado y dar brillo extremo.</p>
                 </div>
@@ -452,10 +470,12 @@
                 </div>
             </div>
 
-            <!-- Producto 2 -->
+            <!-- Producto 2 (Usa tu foto IMG_4259.jpeg) -->
             <div class="product-card">
                 <div>
-                    <div class="product-image-box">💧</div>
+                    <div class="product-image-box">
+                        <img src="IMG_4259.jpeg" alt="Tratamiento Repolarizador">
+                    </div>
                     <h3 class="product-title">Tratamiento Repolarizador</h3>
                     <p class="product-desc">Hidratación intensiva restauradora para cabellos secos, maltratados por tintes, planchas y secadores.</p>
                 </div>
@@ -468,7 +488,9 @@
             <!-- Producto 3 -->
             <div class="product-card">
                 <div>
-                    <div class="product-image-box">✨</div>
+                    <div class="product-image-box">
+                        <img src="IMG_1825.JPG" alt="Tónico Crecimiento Extremo">
+                    </div>
                     <h3 class="product-title">Tónico Crecimiento Extremo</h3>
                     <p class="product-desc">Activa la irrigación sanguínea en el folículo para despertar nuevos cabellos y densificar la melena.</p>
                 </div>
@@ -481,7 +503,9 @@
             <!-- Producto 4 -->
             <div class="product-card">
                 <div>
-                    <div class="product-image-box">🌿</div>
+                    <div class="product-image-box">
+                        <img src="IMG_4259.jpeg" alt="Kit Completo Aralú">
+                    </div>
                     <h3 class="product-title">Kit Completo Aralú</h3>
                     <p class="product-desc">Incluye Shampoo, Tratamiento y Tónico. La rutina completa definitiva para transformar tu cabello por completo.</p>
                 </div>
@@ -561,7 +585,6 @@
                 <button class="close-modal" onclick="cerrarCarrito()">&times;</button>
             </div>
             <div class="cart-items-list" id="cart-items-container">
-                <!-- Se llena dinámicamente -->
                 <p style="text-align: center; color: #888; padding: 20px;">Tu carrito está vacío</p>
             </div>
             <div class="modal-footer">

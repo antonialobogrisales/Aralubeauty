@@ -183,7 +183,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE CATEGORÍAS -->
+    <!-- SECCIÓN DE CATEGORÍAS (MANTENIENDO LA ESTRUCTURA EXACTA CON FOTOS AGREGADAS EN CADA CÍRCULO) -->
     <section id="categorias" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12">
             <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-purple">Explora por Categoría</h2>
@@ -193,36 +193,40 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
             
+            <!-- Cabello -->
             <div onclick="filtrarCategoria('cabello')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-center neon-arch-card border-2 border-brand-neonPink shadow-lg flex flex-col items-center group">
-                <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 text-brand-neonPink group-hover:scale-110 transition-transform">
-                    <i class="fas fa-pump-soap text-2xl"></i>
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-neonPink mb-4 group-hover:scale-110 transition-transform shadow-md">
+                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=300&q=80" alt="Cabello" class="w-full h-full object-cover">
                 </div>
                 <h3 class="font-cursive text-3xl text-white mb-1">Cabello</h3>
                 <p class="text-xs text-pink-200 font-light">Shampoos, Mascarillas y Tratamientos</p>
                 <span class="mt-4 text-[11px] uppercase tracking-wider text-white font-bold bg-brand-neonPink px-3 py-1 rounded-full shadow">Ver Todo</span>
             </div>
 
+            <!-- Maquillaje -->
             <div onclick="filtrarCategoria('maquillaje')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-center neon-arch-card border-2 border-brand-neonPink shadow-lg flex flex-col items-center group">
-                <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 text-brand-neonPink group-hover:scale-110 transition-transform">
-                    <i class="fas fa-heart text-2xl"></i>
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-neonPink mb-4 group-hover:scale-110 transition-transform shadow-md">
+                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=300&q=80" alt="Maquillaje" class="w-full h-full object-cover">
                 </div>
                 <h3 class="font-cursive text-3xl text-white mb-1">Maquillaje</h3>
                 <p class="text-xs text-pink-200 font-light">Labiales, Bases y Pinceles</p>
                 <span class="mt-4 text-[11px] uppercase tracking-wider text-white font-bold bg-brand-neonPink px-3 py-1 rounded-full shadow">Ver Todo</span>
             </div>
 
+            <!-- Skincare -->
             <div onclick="filtrarCategoria('skincare')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-center neon-arch-card border-2 border-brand-neonPink shadow-lg flex flex-col items-center group">
-                <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 text-brand-neonPink group-hover:scale-110 transition-transform">
-                    <i class="fas fa-spa text-2xl"></i>
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-neonPink mb-4 group-hover:scale-110 transition-transform shadow-md">
+                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=300&q=80" alt="Skincare" class="w-full h-full object-cover">
                 </div>
                 <h3 class="font-cursive text-3xl text-white mb-1">Skincare</h3>
                 <p class="text-xs text-pink-200 font-light">Cremas, Serums y Limpiadores</p>
                 <span class="mt-4 text-[11px] uppercase tracking-wider text-white font-bold bg-brand-neonPink px-3 py-1 rounded-full shadow">Ver Todo</span>
             </div>
 
+            <!-- Accesorios -->
             <div onclick="filtrarCategoria('accesorios')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-center neon-arch-card border-2 border-brand-neonPink shadow-lg flex flex-col items-center group">
-                <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 text-brand-neonPink group-hover:scale-110 transition-transform">
-                    <i class="fas fa-gem text-2xl"></i>
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-neonPink mb-4 group-hover:scale-110 transition-transform shadow-md">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80" alt="Accesorios" class="w-full h-full object-cover">
                 </div>
                 <h3 class="font-cursive text-3xl text-white mb-1">Accesorios</h3>
                 <p class="text-xs text-pink-200 font-light">Brochas, Espejos y Organizadores</p>
@@ -279,441 +283,4 @@
                             <div class="flex items-center gap-3">
                                 <i class="fas fa-check-circle text-brand-neonPink"></i>
                                 <span>Diagnóstico rápido de tipo de piel y cabello</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i class="fas fa-check-circle text-brand-neonPink"></i>
-                                <span>Atención cálida e impecable</span>
-                            </div>
-                        </div>
-                        <a href="https://maps.app.goo.gl/o3CRyqvAdJCh879n7" target="_blank" class="inline-flex items-center gap-2 bg-brand-neonPink hover:bg-pink-600 text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-all shadow-lg shadow-pink-500/30 transform hover:-translate-y-0.5">
-                            <i class="fas fa-map-marker-alt"></i> Abrir en Maps / Waze
-                        </a>
-                    </div>
-
-                    <!-- Representación Gráfica de Repisas Iluminadas -->
-                    <div class="bg-purple-950/80 p-6 rounded-2xl border border-pink-500/30">
-                        <div class="text-center mb-4 border-b border-purple-800 pb-3">
-                            <h3 class="font-serif text-xl font-bold text-pink-200">Aralú Beauty Store</h3>
-                            <p class="text-xs text-purple-300">Organización y Elegancia</p>
-                        </div>
-                        <div class="space-y-4">
-                            <!-- Repisa 1 -->
-                            <div class="bg-purple-900/40 p-3 rounded-lg border-b-2 border-brand-neonPink shadow-[0_4px_10px_rgba(255,59,191,0.2)]">
-                                <div class="flex justify-between items-center text-xs font-semibold text-pink-200 mb-2">
-                                    <span>Tratamientos Capilares</span>
-                                    <span class="text-[10px] bg-brand-neonPink/30 px-2 py-0.5 rounded text-white">Luz Neón</span>
-                                </div>
-                                <div class="flex gap-2 text-xl text-purple-300">
-                                    <i class="fas fa-bottle-droplet"></i>
-                                    <i class="fas fa-pump-soap"></i>
-                                    <i class="fas fa-wine-bottle"></i>
-                                    <i class="fas fa-spray-can"></i>
-                                </div>
-                            </div>
-                            <!-- Repisa 2 -->
-                            <div class="bg-purple-900/40 p-3 rounded-lg border-b-2 border-brand-neonPink shadow-[0_4px_10px_rgba(255,59,191,0.2)]">
-                                <div class="flex justify-between items-center text-xs font-semibold text-pink-200 mb-2">
-                                    <span>Skincare & Faciales</span>
-                                    <span class="text-[10px] bg-brand-neonPink/30 px-2 py-0.5 rounded text-white">Luz Neón</span>
-                                </div>
-                                <div class="flex gap-2 text-xl text-purple-300">
-                                    <i class="fas fa-jar"></i>
-                                    <i class="fas fa-mortar-pestle"></i>
-                                    <i class="fas fa-spa"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-brand-deep text-purple-200 py-12 border-t border-purple-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                
-                <div class="space-y-3">
-                    <span class="font-cursive text-4xl text-brand-lavender">Aralú</span>
-                    <p class="text-xs text-purple-300 leading-relaxed">
-                        Belleza que te representa. Tu tienda especializada en cosméticos, tratamientos capilares, maquillaje y skincare.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-3">Navegación</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
-                        <li><a href="#categorias" class="hover:text-white transition-colors">Categorías</a></li>
-                        <li><a href="#catalogo" class="hover:text-white transition-colors">Catálogo de Productos</a></li>
-                        <li><a href="#tienda-fisica" class="hover:text-white transition-colors">Tienda Física</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-3">Categorías</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#catalogo" onclick="filtrarCategoria('cabello')" class="hover:text-white transition-colors">Cuidado Capilar</a></li>
-                        <li><a href="#catalogo" onclick="filtrarCategoria('maquillaje')" class="hover:text-white transition-colors">Maquillaje</a></li>
-                        <li><a href="#catalogo" onclick="filtrarCategoria('skincare')" class="hover:text-white transition-colors">Skincare</a></li>
-                        <li><a href="#catalogo" onclick="filtrarCategoria('accesorios')" class="hover:text-white transition-colors">Accesorios</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold text-sm uppercase tracking-wider mb-3">Contacto</h4>
-                    <div class="space-y-2 text-xs">
-                        <p class="flex items-center gap-2"><i class="fab fa-whatsapp text-green-400"></i> +57 350 707 9805</p>
-                        <a href="https://maps.app.goo.gl/o3CRyqvAdJCh879n7" target="_blank" class="flex items-center gap-2 text-pink-300 hover:text-white transition-colors">
-                            <i class="fas fa-map-marker-alt text-brand-neonPink"></i> Ubicación Google Maps
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="border-t border-purple-900/60 pt-6 text-center text-xs text-purple-400">
-                <p>&copy; 2026 Aralú Beauty. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- DRAWER / SLIDE-OVER DEL CARRITO -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden transition-all">
-        <!-- Fondo Oscuro -->
-        <div id="cart-overlay" onclick="toggleCarrito()" class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
-
-        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
-            <div id="cart-panel" class="w-screen max-w-md bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300">
-                
-                <!-- Header Carrito -->
-                <div class="p-5 bg-brand-purple text-white flex items-center justify-between border-b border-purple-800">
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-shopping-bag text-brand-neonPink"></i>
-                        <h3 class="font-serif font-bold text-lg">Tu Carrito de Compras</h3>
-                    </div>
-                    <button onclick="toggleCarrito()" class="text-purple-200 hover:text-white p-1 rounded-lg">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-
-                <!-- Lista de Productos -->
-                <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-4">
-                    <!-- Dinámico -->
-                </div>
-
-                <!-- Footer Carrito -->
-                <div class="p-5 bg-purple-50 border-t border-purple-100 space-y-4">
-                    <div class="flex justify-between items-center text-base font-bold text-gray-800">
-                        <span>Total estimado:</span>
-                        <span id="cart-total" class="text-xl text-brand-purple">$0 COP</span>
-                    </div>
-
-                    <button onclick="enviarPedidoWhatsApp()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-green-500/30 flex items-center justify-center gap-2 transition-all">
-                        <i class="fab fa-whatsapp text-xl"></i> Realizar Pedido por WhatsApp
-                    </button>
-
-                    <button onclick="vaciarCarrito()" class="w-full text-xs text-gray-500 hover:text-red-500 text-center py-1">
-                        Vaciar carrito
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/573507079805?text=Hola%20Aralú%20Beauty!%20Me%20gustaría%20hacer%20una%20consulta" target="_blank" class="fixed bottom-6 right-6 z-30 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all flex items-center justify-center text-2xl shadow-green-500/40">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- NOTIFICACIÓN TOAST AGREGADO -->
-    <div id="toast" class="fixed top-24 right-5 z-50 bg-brand-deep text-white px-5 py-3 rounded-xl shadow-2xl border border-pink-500/50 flex items-center gap-3 transform translate-x-full opacity-0 transition-all duration-300">
-        <div class="w-8 h-8 rounded-full bg-brand-neonPink flex items-center justify-center text-white">
-            <i class="fas fa-check"></i>
-        </div>
-        <div>
-            <p class="text-xs font-bold text-pink-200">¡Producto agregado!</p>
-            <p id="toast-msg" class="text-xs text-gray-200">Se añadió a tu bolsa de compras.</p>
-        </div>
-    </div>
-
-    <!-- LÓGICA JAVASCRIPT -->
-    <script>
-        const productos = [
-            {
-                id: 1,
-                nombre: "Shampoo Milagros Crecimiento Cebolla y Péptidos (450ml)",
-                categoria: "cabello",
-                precio: 38000,
-                imagen: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80",
-                badge: "Más Vendido"
-            },
-            {
-                id: 2,
-                nombre: "Tratamiento Reparación Extrema Keratina",
-                categoria: "cabello",
-                precio: 45000,
-                imagen: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=600&q=80",
-                badge: "Destacado"
-            },
-            {
-                id: 3,
-                nombre: "Kit Gloss Humectante & Delineador Nude",
-                categoria: "maquillaje",
-                precio: 28000,
-                imagen: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=600&q=80",
-                badge: "Nuevo"
-            },
-            {
-                id: 4,
-                nombre: "Base Líquida Acabado Satinado & Cobertura",
-                categoria: "maquillaje",
-                precio: 42000,
-                imagen: "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?auto=format&fit=crop&w=600&q=80",
-                badge: null
-            },
-            {
-                id: 5,
-                nombre: "Serum Facial Hidratante Lavanda & Ácido Hialurónico",
-                categoria: "skincare",
-                precio: 35000,
-                imagen: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80",
-                badge: "Favorito"
-            },
-            {
-                id: 6,
-                nombre: "Crema Limpiadora Facial Purificante",
-                categoria: "skincare",
-                precio: 32000,
-                imagen: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80",
-                badge: null
-            },
-            {
-                id: 7,
-                nombre: "Set de Brochas Profesionales Morado Pastel",
-                categoria: "accesorios",
-                precio: 48000,
-                imagen: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80",
-                badge: "Top Ventas"
-            },
-            {
-                id: 8,
-                nombre: "Espejo de Mano Neón Edición Especial",
-                categoria: "accesorios",
-                precio: 22000,
-                imagen: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80",
-                badge: null
-            }
-        ];
-
-        let carrito = JSON.parse(localStorage.getItem('aralu_carrito')) || [];
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderizarProductos(productos);
-            actualizarCarritoUI();
-        });
-
-        function formatoCOP(valor) {
-            return new Intl.NumberFormat('es-CO', {
-                style: 'currency',
-                currency: 'COP',
-                minimumFractionDigits: 0
-            }).format(valor);
-        }
-
-        function renderizarProductos(items) {
-            const grid = document.getElementById('grid-productos');
-            grid.innerHTML = '';
-
-            if (items.length === 0) {
-                grid.innerHTML = `<p class="col-span-full text-center text-gray-500 py-8">No se encontraron productos en esta categoría.</p>`;
-                return;
-            }
-
-            items.forEach(prod => {
-                const card = document.createElement('div');
-                card.className = "bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-purple-100 flex flex-col justify-between group";
-                
-                card.innerHTML = `
-                    <div class="relative overflow-hidden aspect-square bg-purple-50">
-                        <img src="${prod.imagen}" alt="${prod.nombre}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        ${prod.badge ? `<span class="absolute top-3 left-3 bg-brand-neonPink text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-full shadow">${prod.badge}</span>` : ''}
-                    </div>
-                    <div class="p-4 flex-grow flex flex-col justify-between space-y-3">
-                        <div>
-                            <span class="text-[10px] font-bold text-brand-light uppercase tracking-wider">${prod.categoria}</span>
-                            <h3 class="text-sm font-semibold text-gray-800 line-clamp-2 mt-0.5">${prod.nombre}</h3>
-                        </div>
-                        <div class="flex items-center justify-between pt-2 border-t border-purple-50">
-                            <span class="text-base font-bold text-brand-purple">${formatoCOP(prod.precio)}</span>
-                            <button onclick="agregarAlCarrito(${prod.id})" class="bg-brand-purple hover:bg-brand-neonPink text-white text-xs font-semibold px-3 py-2 rounded-xl transition-colors duration-300 flex items-center gap-1.5 shadow-sm">
-                                <i class="fas fa-plus text-[10px]"></i> Agregar
-                            </button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        function filtrarCategoria(cat) {
-            const catalogoSec = document.getElementById('catalogo');
-            if(catalogoSec) {
-                catalogoSec.scrollIntoView({ behavior: 'smooth' });
-            }
-
-            const btns = document.querySelectorAll('.cat-btn');
-            btns.forEach(btn => {
-                if (btn.getAttribute('data-cat') === cat) {
-                    btn.className = "cat-btn bg-brand-purple text-white text-xs font-semibold px-4 py-2 rounded-full transition-all shadow-sm";
-                } else {
-                    btn.className = "cat-btn bg-white hover:bg-purple-100 text-gray-700 text-xs font-semibold px-4 py-2 rounded-full transition-all border border-purple-200";
-                }
-            });
-
-            if (cat === 'todas') {
-                renderizarProductos(productos);
-            } else {
-                const filtrados = productos.filter(p => p.categoria === cat);
-                renderizarProductos(filtrados);
-            }
-        }
-
-        function agregarAlCarrito(id) {
-            const producto = productos.find(p => p.id === id);
-            const existe = carrito.find(item => item.id === id);
-
-            if (existe) {
-                existe.cantidad++;
-            } else {
-                carrito.push({ ...producto, cantidad: 1 });
-            }
-
-            guardarCarrito();
-            actualizarCarritoUI();
-            mostrarToast(producto.nombre);
-
-            const badge = document.getElementById('cart-count');
-            badge.classList.add('animate-cart-bounce');
-            setTimeout(() => badge.classList.remove('animate-cart-bounce'), 400);
-        }
-
-        function cambiarCantidad(id, cambio) {
-            const item = carrito.find(p => p.id === id);
-            if (item) {
-                item.cantidad += cambio;
-                if (item.cantidad <= 0) {
-                    carrito = carrito.filter(p => p.id !== id);
-                }
-                guardarCarrito();
-                actualizarCarritoUI();
-            }
-        }
-
-        function vaciarCarrito() {
-            carrito = [];
-            guardarCarrito();
-            actualizarCarritoUI();
-        }
-
-        function guardarCarrito() {
-            localStorage.setItem('aralu_carrito', JSON.stringify(carrito));
-        }
-
-        function actualizarCarritoUI() {
-            const totalCount = carrito.reduce((sum, item) => sum + item.cantidad, 0);
-            const totalPrice = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
-
-            document.getElementById('cart-count').innerText = totalCount;
-            document.getElementById('cart-total').innerText = formatoCOP(totalPrice);
-
-            const container = document.getElementById('cart-items');
-            container.innerHTML = '';
-
-            if (carrito.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center py-12 text-gray-400 space-y-3">
-                        <i class="fas fa-shopping-bag text-4xl text-purple-200"></i>
-                        <p class="text-sm">Tu carrito está vacío</p>
-                    </div>
-                `;
-                return;
-            }
-
-            carrito.forEach(item => {
-                const el = document.createElement('div');
-                el.className = "flex items-center gap-3 p-3 bg-purple-50/50 rounded-xl border border-purple-100";
-                el.innerHTML = `
-                    <img src="${item.imagen}" class="w-14 h-14 object-cover rounded-lg">
-                    <div class="flex-grow">
-                        <h4 class="text-xs font-bold text-gray-800 line-clamp-1">${item.nombre}</h4>
-                        <p class="text-xs font-semibold text-brand-purple mt-0.5">${formatoCOP(item.precio)}</p>
-                        <div class="flex items-center gap-2 mt-2">
-                            <button onclick="cambiarCantidad(${item.id}, -1)" class="w-5 h-5 rounded bg-white text-gray-600 flex items-center justify-center border text-xs font-bold">-</button>
-                            <span class="text-xs font-bold">${item.cantidad}</span>
-                            <button onclick="cambiarCantidad(${item.id}, 1)" class="w-5 h-5 rounded bg-white text-gray-600 flex items-center justify-center border text-xs font-bold">+</button>
-                        </div>
-                    </div>
-                    <button onclick="cambiarCantidad(${item.id}, -${item.cantidad})" class="text-gray-400 hover:text-red-500 text-xs p-1">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                `;
-                container.appendChild(el);
-            });
-        }
-
-        function toggleCarrito() {
-            const drawer = document.getElementById('cart-drawer');
-            const overlay = document.getElementById('cart-overlay');
-            const panel = document.getElementById('cart-panel');
-
-            if (drawer.classList.contains('hidden')) {
-                drawer.classList.remove('hidden');
-                setTimeout(() => {
-                    overlay.classList.remove('opacity-0');
-                    panel.classList.remove('translate-x-full');
-                }, 10);
-            } else {
-                overlay.classList.add('opacity-0');
-                panel.classList.add('translate-x-full');
-                setTimeout(() => {
-                    drawer.classList.add('hidden');
-                }, 300);
-            }
-        }
-
-        function mostrarToast(nombreProd) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-msg').innerText = nombreProd;
-            toast.classList.remove('translate-x-full', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('translate-x-full', 'opacity-0');
-            }, 3000);
-        }
-
-        function enviarPedidoWhatsApp() {
-            if (carrito.length === 0) {
-                alert("Tu carrito está vacío.");
-                return;
-            }
-
-            let mensaje = "¡Hola Aralú Beauty! 🌸 Quisiera realizar el siguiente pedido:\n\n";
-            let total = 0;
-
-            carrito.forEach((item, index) => {
-                const subtotal = item.precio * item.cantidad;
-                total += subtotal;
-                mensaje += `${index + 1}. *${item.nombre}*\n   Cantidad: ${item.cantidad} | Subtotal: ${formatoCOP(subtotal)}\n`;
-            });
-
-            mensaje += `\n*Total a Pagar:* ${formatoCOP(total)}\n\n¿Me confirman disponibilidad y medios de pago, por favor?`;
-
-            const url = `https://wa.me/573507079805?text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
-        }
-    </script>
-</body>
-</html>
+ 

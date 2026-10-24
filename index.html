@@ -5,160 +5,671 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aralú Beauty - Tienda Oficial</title>
     <style>
+        :root {
+            --primary: #8c6d53;
+            --primary-dark: #5c4330;
+            --accent: #d4a373;
+            --bg-color: #fcf9f5;
+            --text-color: #2b231d;
+            --white: #ffffff;
+            --gray-light: #f4eee9;
+            --whatsapp: #25d366;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
+
         body {
-            background-color: #faf5f8;
-            color: #333;
-            padding-bottom: 80px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding-bottom: 90px;
         }
+
+        /* Navbar */
+        nav {
+            background: var(--white);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            letter-spacing: 1px;
+        }
+        .nav-cart-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* Hero Header */
         header {
             background: linear-gradient(135deg, #d4a373, #faedcd);
             color: #4a3b32;
             text-align: center;
-            padding: 30px 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 60px 20px;
+            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.02);
         }
         header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 5px;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
         header p {
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-style: italic;
             opacity: 0.9;
-        }
-        .container {
             max-width: 600px;
-            margin: 20px auto;
-            padding: 0 15px;
+            margin: 0 auto;
         }
+
+        /* Container Principal */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        /* Catálogo de Productos */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
         .product-card {
-            background: #fff;
-            border-radius: 15px;
+            background: var(--white);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-bottom: 20px;
-            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
             padding: 20px;
+            border: 1px solid #f0e6dc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
         }
-        .product-image {
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image-box {
             width: 100%;
-            max-height: 280px;
-            object-fit: cover;
-            border-radius: 10px;
+            height: 200px;
+            background: linear-gradient(135deg, #fefae0, #dda15e);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
             margin-bottom: 15px;
-            background-color: #f0f0f0;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
         }
+
         .product-title {
-            font-size: 1.4rem;
-            color: #2b2b2b;
+            font-size: 1.25rem;
+            color: var(--text-color);
             margin-bottom: 8px;
+            font-weight: 700;
         }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
         .product-price {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             font-weight: bold;
-            color: #d4a373;
+            color: var(--primary-dark);
             margin-bottom: 15px;
         }
+
         .btn-add {
-            background-color: #d4a373;
-            color: white;
+            background-color: var(--primary);
+            color: var(--white);
             border: none;
-            padding: 12px 25px;
+            padding: 12px 20px;
             border-radius: 25px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: bold;
             cursor: pointer;
             transition: background 0.3s;
             width: 100%;
+            box-shadow: 0 4px 12px rgba(140, 109, 83, 0.3);
         }
         .btn-add:hover {
-            background-color: #bc8a5f;
+            background-color: var(--primary-dark);
         }
-        .cart-bar {
+
+        /* Sección de Beneficios */
+        .benefits-section {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 40px 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .benefit-box h3 {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .benefit-box p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Testimonios */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .testimonial-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-left: 4px solid var(--accent);
+        }
+        .testimonial-card p {
+            font-size: 0.95srem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .testimonial-card span {
+            font-weight: bold;
+            color: var(--primary-dark);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Preguntas Frecuentes */
+        .faq-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--gray-light);
+            padding-bottom: 15px;
+        }
+        .faq-item h4 {
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Modal del Carrito */
+        .modal-overlay {
             position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #fff;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
             padding: 15px;
-            box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+        }
+        .modal-cart {
+            background: var(--white);
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 600px;
-            margin: 0 auto;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--gray-light);
+            padding-bottom: 10px;
         }
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
+        .modal-header h3 {
+            color: var(--primary-dark);
+        }
+        .close-modal {
+            background: none;
             border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+        }
+        .cart-items-list {
+            overflow-y: auto;
+            max-height: 50vh;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-light);
+            font-size: 0.95rem;
+        }
+        .cart-item-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-item-title {
             font-weight: bold;
-            text-decoration: none;
+            color: var(--text-color);
+        }
+        .cart-item-price {
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+        .cart-item-actions {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+        }
+        .qty-btn {
+            background: var(--gray-light);
+            border: none;
+            width: 25px; height: 25px;
+            border-radius: 50%;
+            font-weight: bold;
             cursor: pointer;
+        }
+        .modal-footer {
+            border-top: 1px solid var(--gray-light);
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .modal-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+        .btn-whatsapp-checkout {
+            background-color: var(--whatsapp);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: background 0.3s;
+        }
+        .btn-whatsapp-checkout:hover {
+            background-color: #1ebe57;
+        }
+
+        /* Barra Inferior Flotante */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: var(--white);
+            padding: 15px 25px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            z-index: 900;
+        }
+        .bottom-bar-total {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .bottom-bar-total span {
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+        }
+
+        /* Notificación flotante */
+        .notification {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: #333;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            transition: transform 0.3s ease;
+            z-index: 3000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .notification.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 0;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--gray-light);
         }
     </style>
 </head>
 <body>
 
+    <div id="notif" class="notification">¡Producto agregado al carrito! ✨</div>
+
+    <!-- Barra Superior -->
+    <nav>
+        <div class="nav-logo">Aralú Beauty 🌿</div>
+        <button class="nav-cart-btn" onclick="abrirCarrito()">
+            🛒 Carrito (<span id="cart-count">0</span>)
+        </button>
+    </nav>
+
+    <!-- Header / Hero -->
     <header>
         <h1>Aralú Beauty</h1>
-        <p>Belleza que te hace brillar ✨</p>
+        <p>Nutrición capilar experta, fórmulas artesanales y el secreto para un cabello largo, sano y brillante ✨</p>
     </header>
 
+    <!-- Contenido Principal -->
     <div class="container">
-        <div class="product-card">
-            <div class="product-image" style="display:flex;align-items:center;justify-content:center;font-size:4rem;">🧴</div>
-            <h2 class="product-title">Shampoo Milagros</h2>
-            <p class="product-price">$39.900 COP</p>
-            <button class="btn-add" onclick="agregarAlCarrito('Shampoo Milagros', 39900)">Agregar al Carrito 🛒</button>
+        
+        <h2 class="section-title">Catálogo Exclusivo</h2>
+        
+        <div class="products-grid">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div>
+                    <div class="product-image-box">🧴</div>
+                    <h3 class="product-title">Shampoo Milagros</h3>
+                    <p class="product-desc">Fórmula magistral especializada para frenar la caída, estimular el crecimiento acelerado y dar brillo extremo.</p>
+                </div>
+                <div>
+                    <p class="product-price">$39.900 COP</p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Shampoo Milagros', 39900)">Agregar al Carrito 🛒</button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div>
+                    <div class="product-image-box">💧</div>
+                    <h3 class="product-title">Tratamiento Repolarizador</h3>
+                    <p class="product-desc">Hidratación intensiva restauradora para cabellos secos, maltratados por tintes, planchas y secadores.</p>
+                </div>
+                <div>
+                    <p class="product-price">$45.000 COP</p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Tratamiento Repolarizador', 45000)">Agregar al Carrito 🛒</button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <div>
+                    <div class="product-image-box">✨</div>
+                    <h3 class="product-title">Tónico Crecimiento Extremo</h3>
+                    <p class="product-desc">Activa la irrigación sanguínea en el folículo para despertar nuevos cabellos y densificar la melena.</p>
+                </div>
+                <div>
+                    <p class="product-price">$42.000 COP</p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Tónico Crecimiento Extremo', 42000)">Agregar al Carrito 🛒</button>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card">
+                <div>
+                    <div class="product-image-box">🌿</div>
+                    <h3 class="product-title">Kit Completo Aralú</h3>
+                    <p class="product-desc">Incluye Shampoo, Tratamiento y Tónico. La rutina completa definitiva para transformar tu cabello por completo.</p>
+                </div>
+                <div>
+                    <p class="product-price">$119.000 COP</p>
+                    <button class="btn-add" onclick="agregarAlCarrito('Kit Completo Aralú', 119000)">Agregar al Carrito 🛒</button>
+                </div>
+            </div>
         </div>
+
+        <!-- Beneficios -->
+        <div class="benefits-section">
+            <div class="benefit-box">
+                <h3>🌿 Fórmulas Seguras</h3>
+                <p>Ingredientes naturales seleccionados rigurosamente para cuidar la salud de tu fibra capilar sin químicos agresivos.</p>
+            </div>
+            <div class="benefit-box">
+                <h3>🚚 Envíos Confiables</h3>
+                <p>Despachamos tus pedidos de manera segura y rápida a la puerta de tu casa en todo el país.</p>
+            </div>
+            <div class="benefit-box">
+                <h3>💬 Asesoría Personalizada</h3>
+                <p>Te acompañamos de la mano en tu proceso de transformación resolviendo todas tus dudas vía WhatsApp.</p>
+            </div>
+        </div>
+
+        <!-- Testimonios -->
+        <h2 class="section-title">Lo que dicen nuestras clientas</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"¡El shampoo Milagros me salvó el cabello! Se me caía muchísimo y ahora tengo un montón de cabello nuevo creciendo. Súper recomendado."</p>
+                <span>— Marcela G. ⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"El kit completo es una maravilla. El olor es delicioso y el cabello me queda súper sedoso y brillante desde la primera semana."</p>
+                <span>— Valentina R. ⭐⭐⭐⭐⭐</span>
+            </div>
+        </div>
+
+        <!-- Preguntas Frecuentes -->
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <h4>¿Cuánto tarda el envío?</h4>
+                <p>Los envíos suelen tardar de 2 a 4 días hábiles dependiendo de tu ciudad en Colombia.</p>
+            </div>
+            <div class="faq-item">
+                <h4>¿Sirve para todo tipo de cabello?</h4>
+                <p>Sí, nuestras fórmulas están diseñadas tanto para cabellos lisos, ondulados, rizados, con keratina o tinturados.</p>
+            </div>
+            <div class="faq-item">
+                <h4>¿Cómo realizo el pago?</h4>
+                <p>Al hacer clic en finalizar pedido por WhatsApp, te atenderemos directamente para coordinar el pago seguro (transferencia, Nequi, Daviplata o contra entrega según cobertura).</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Aralú Beauty. Todos los derechos reservados.</p>
+        </footer>
     </div>
 
-    <div class="cart-bar">
-        <div>
-            <strong>Total:</strong> <span id="total-price">$0 COP</span>
+    <!-- Barra Inferior Flotante -->
+    <div class="bottom-bar">
+        <div class="bottom-bar-total">
+            Total: <span id="bar-total">$0</span>
         </div>
-        <button class="btn-whatsapp" onclick="enviarWhatsApp()">
-            Finalizar Pedido por WhatsApp 📲
+        <button class="btn-add" style="width: auto; padding: 12px 25px;" onclick="abrirCarrito()">
+            Ver Carrito & Finalizar 🛒
         </button>
+    </div>
+
+    <!-- Modal del Carrito -->
+    <div id="cartModal" class="modal-overlay" onclick="cerrarFueraModal(event)">
+        <div class="modal-cart">
+            <div class="modal-header">
+                <h3>Tu Carrito de Compras</h3>
+                <button class="close-modal" onclick="cerrarCarrito()">&times;</button>
+            </div>
+            <div class="cart-items-list" id="cart-items-container">
+                <!-- Se llena dinámicamente -->
+                <p style="text-align: center; color: #888; padding: 20px;">Tu carrito está vacío</p>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-total">
+                    <span>Total a pagar:</span>
+                    <span id="modal-total-price">$0 COP</span>
+                </div>
+                <button class="btn-whatsapp-checkout" onclick="enviarWhatsApp()">
+                    📲 Finalizar Pedido por WhatsApp
+                </button>
+            </div>
+        </div>
     </div>
 
     <script>
         let carrito = [];
-        let total = 0;
 
         function agregarAlCarrito(nombre, precio) {
-            carrito.push({ nombre, precio });
-            total += precio;
-            actualizarCarrito();
+            let productoExistente = carrito.find(item => item.nombre === nombre);
+            if (productoExistente) {
+                productoExistente.cantidad++;
+            } else {
+                carrito.push({ nombre, precio, cantidad: 1 });
+            }
+            actualizarInterfazCarrito();
+            mostrarNotificacion();
         }
 
-        function actualizarCarrito() {
-            document.getElementById('total-price').innerText = '$' + total.toLocaleString('es-CO') + ' COP';
+        function cambiarCantidad(index, cambio) {
+            carrito[index].cantidad += cambio;
+            if (carrito[index].cantidad <= 0) {
+                carrito.splice(index, 1);
+            }
+            actualizarInterfazCarrito();
+        }
+
+        function actualizarInterfazCarrito() {
+            let totalItems = 0;
+            let precioTotal = 0;
+            let contenedorItems = document.getElementById('cart-items-container');
+            
+            contenedorItems.innerHTML = '';
+
+            if (carrito.length === 0) {
+                contenedorItems.innerHTML = '<p style="text-align: center; color: #888; padding: 20px;">Tu carrito está vacío</p>';
+            } else {
+                carrito.forEach((item, index) => {
+                    totalItems += item.cantidad;
+                    precioTotal += item.precio * item.cantidad;
+
+                    let div = document.createElement('div');
+                    div.className = 'cart-item';
+                    div.innerHTML = `
+                        <div class="cart-item-details">
+                            <span class="cart-item-title">${item.nombre}</span>
+                            <span class="cart-item-price">$${item.precio.toLocaleString('es-CO')} x ${item.cantidad}</span>
+                        </div>
+                        <div class="cart-item-actions">
+                            <button class="qty-btn" onclick="cambiarCantidad(${index}, -1)">-</button>
+                            <span>${item.cantidad}</span>
+                            <button class="qty-btn" onclick="cambiarCantidad(${index}, 1)">+</button>
+                        </div>
+                    `;
+                    contenedorItems.appendChild(div);
+                });
+            }
+
+            document.getElementById('cart-count').innerText = totalItems;
+            document.getElementById('bar-total').innerText = '$' + precioTotal.toLocaleString('es-CO');
+            document.getElementById('modal-total-price').innerText = '$' + precioTotal.toLocaleString('es-CO') + ' COP';
+        }
+
+        function abrirCarrito() {
+            document.getElementById('cartModal').style.display = 'flex';
+        }
+
+        function cerrarCarrito() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+
+        function cerrarFueraModal(event) {
+            if (event.target.id === 'cartModal') {
+                cerrarCarrito();
+            }
+        }
+
+        function mostrarNotificacion() {
+            let notif = document.getElementById('notif');
+            notif.classList.add('show');
+            setTimeout(() => {
+                notif.classList.remove('show');
+            }, 2000);
         }
 
         function enviarWhatsApp() {
             if (carrito.length === 0) {
-                alert('Por favor agrega al menos un producto al carrito.');
+                alert('Por favor agrega al menos un producto a tu carrito.');
                 return;
             }
 
             let mensaje = "¡Hola Aralú Beauty! ✨ Quiero realizar el siguiente pedido:\n\n";
+            let total = 0;
             carrito.forEach((prod, index) => {
-                mensaje += `${index + 1}. ${prod.nombre} - $${prod.precio.toLocaleString('es-CO')}\n`;
+                let subtotal = prod.precio * prod.cantidad;
+                total += subtotal;
+                mensaje += `${index + 1}. ${prod.nombre} (Cant: ${prod.cantidad}) - $${subtotal.toLocaleString('es-CO')} COP\n`;
             });
-            mensaje += `\n*Total:* $${total.toLocaleString('es-CO')} COP\n\n¿Me ayudan con los datos para el envío?`;
+            mensaje += `\n*Total a pagar:* $${total.toLocaleString('es-CO')} COP\n\n¿Me confirman datos para el pago y envío por favor?`;
 
             let telefono = "573507077889";
             let url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;

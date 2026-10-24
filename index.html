@@ -1,3 +1,27 @@
+<!-- Barra inferior flotante -->
+<div class="cart-bar">
+    <span>Carrito (<span id="cart-count">0</span>)</span>
+    <span id="bar-total">$0</span>
+    <button onclick="abrirCarrito()">Ver Carrito</button>
+</div>
+
+<!-- Modal del Carrito -->
+<div id="cartModal" class="modal" onclick="cerrarFueraModal(event)">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Tu Carrito</h2>
+            <button class="close-modal" onclick="cerrarCarrito()">×</button>
+        </div>
+        <div id="cart-items-list">
+            <!-- Los productos aparecerán aquí automáticamente -->
+        </div>
+        <div class="modal-footer">
+            <h3>Total: <span id="total-modal">$0</span></h3>
+            <button onclick="finalizarPedido()">Finalizar Pedido</button>
+        </div>
+    </div>
+</div>
+
 <script>
     let carrito = [];
 

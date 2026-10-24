@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aralú Beauty | Belleza que te hace brillar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aralu: {
+                            base: '#4A154B',
+                            dark: '#350d36',
+                            purple: '#6B21A8',
+                            lavender: '#A855F7',
+                            light: '#F3E8FF',
+                            soft: '#FAF5FF',
+                            neonPink: '#FF2E93',
+                            neonPurple: '#BD00FF',
+                            gold: '#D4AF37'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        cursive: ['Great Vibes', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .neon-glow-pink {
+            text-shadow: 0 0 5px #FF2E93, 0 0 10px #FF2E93, 0 0 20px #FF2E93, 0 0 40px #FF2E93;
+        }
+        .neon-box-purple {
+            box-shadow: 0 0 15px rgba(189, 0, 255, 0.4), inset 0 0 15px rgba(189, 0, 255, 0.2);
+        }
+        .arch-card {
+            border-top-left-radius: 9999px;
+            border-top-right-radius: 9999px;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-aralu-soft text-slate-800 font-sans antialiased selection:bg-aralu-lavender selection:text-white pb-20 md:pb-0">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-aralu-base via-aralu-purple to-aralu-base text-white text-xs py-2 px-4 text-center font-medium tracking-wide shadow-inner flex justify-center items-center gap-2">
+        <span>✨ ¡Envíos a todo el país! Pide fácilmente por WhatsApp ✨</span>
+        <i class="fa-solid fa-heart text-pink-400 text-[10px]"></i>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-purple-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full bg-aralu-base flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <span class="font-serif italic font-bold text-xl text-purple-200">A</span>
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-aralu-base block leading-none">Aralú</span>
+                    <span class="text-[10px] tracking-[0.3em] font-bold text-aralu-lavender uppercase block mt-1">B E A U T Y</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <button onclick="filterCategory('Todos')" class="hover:text-aralu-purple transition-colors py-1 border-b-2 border-transparent hover:border-aralu-lavender">Todos</button>
+                <button onclick="filterCategory('Cabello')" class="hover:text-aralu-purple transition-colors py-1 border-b-2 border-transparent hover:border-aralu-lavender">Cabello</button>
+                <button onclick="filterCategory('Maquillaje')" class="hover:text-aralu-purple transition-colors py-1 border-b-2 border-transparent hover:border-aralu-lavender">Maquillaje</button>
+                <button onclick="filterCategory('Skincare')" class="hover:text-aralu-purple transition-colors py-1 border-b-2 border-transparent hover:border-aralu-lavender">Skincare</button>
+                <button onclick="filterCategory('Corporal')" class="hover:text-aralu-purple transition-colors py-1 border-b-2 border-transparent hover:border-aralu-lavender">Corporal</button>
+            </nav>
+
+            <!-- Actions (Search & Cart) -->
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block w-48 lg:w-64">
+                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Buscar producto..." 
+                        class="w-full pl-9 pr-4 py-2 text-xs rounded-full bg-purple-50/60 border border-purple-200 focus:outline-none focus:border-aralu-lavender focus:bg-white transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-purple-400 text-xs"></i>
+                </div>
+
+                <button onclick="toggleCart()" class="relative p-2.5 rounded-full bg-purple-100/70 text-aralu-base hover:bg-aralu-lavender hover:text-white transition-all shadow-sm">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span id="cartCount" class="absolute -top-1 -right-1 bg-aralu-neonPink text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER (Estilo Neón Coquette) -->
+    <section class="relative bg-gradient-to-b from-aralu-base via-purple-900 to-aralu-dark text-white overflow-hidden py-16 lg:py-24">
+        <!-- Elementos de luz ambiental neón -->
+        <div class="absolute top-1/2 left-1/4 w-96 h-96 bg-aralu-neonPink/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-aralu-neonPurple/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="text-center lg:text-left space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs text-purple-200">
+                    <span class="w-2 h-2 rounded-full bg-aralu-neonPink animate-ping"></span>
+                    <span>Nueva Colección Disponible</span>
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+                    Belleza que te hace <br>
+                    <span class="font-cursive font-normal text-pink-300 text-5xl sm:text-6xl lg:text-7xl neon-glow-pink">brillar</span> 🎀
+                </h1>
+                
+                <p class="text-purple-100 text-sm sm:text-base max-w-lg mx-auto lg:mx-0 font-light leading-relaxed">
+                    Descubre nuestra gama exclusiva de cuidado capilar, maquillaje, skincare y la nueva línea corporal. Tu rutina favorita a un clic de distancia.
+                </p>
+
+                <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#catalogo" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-aralu-neonPink to-purple-600 text-white font-semibold text-sm shadow-lg shadow-pink-500/30 hover:scale-105 transition-all text-center">
+                        Ver Catálogo <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                    <a href="https://wa.me/5735077889" target="_blank" class="px-8 py-3.5 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white font-semibold text-sm hover:bg-white/20 transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i> Asesoría Personalizada
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual Showcase -->
+            <div class="relative flex justify-center">
+                <div class="w-72 sm:w-80 lg:w-96 h-96 sm:h-[450px] bg-gradient-to-b from-purple-800/40 to-purple-950/80 rounded-t-full border-2 border-purple-400/30 p-4 neon-box-purple flex flex-col items-center justify-end relative overflow-hidden backdrop-blur-sm">
+                    <div class="text-center mb-8 relative z-10">
+                        <span class="font-cursive text-4xl text-pink-300 block">Aralú</span>
+                        <p class="text-xs tracking-widest text-purple-200 uppercase mt-1">Belleza que te representa</p>
+                    </div>
+                    <div class="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 text-center">
+                        <i class="fa-solid fa-sparkles text-pink-300 text-2xl mb-1"></i>
+                        <p class="text-xs font-medium text-white">Pedidos 100% coordinados por WhatsApp</p>
+                        <p class="text-[10px] text-purple-200 mt-0.5">Envíos seguros y atención directa</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MAIN CATALOG CONTAINER -->
+    <main id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        
+        <!-- Section Title & Filters -->
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-aralu-base">Nuestro Catálogo</h2>
+            <div class="w-16 h-1 bg-aralu-lavender mx-auto my-3 rounded-full"></div>
+            <p class="text-slate-500 text-sm">Selecciona tus productos favoritos y agrégalos al carrito para completar tu compra vía WhatsApp.</p>
+
+            <!-- Category Pills -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
+                <button onclick="filterCategory('Todos')" class="category-btn active px-5 py-2 rounded-full text-xs font-semibold transition-all border bg-aralu-base text-white border-aralu-base shadow-sm" data-cat="Todos">Todos</button>
+                <button onclick="filterCategory('Cabello')" class="category-btn px-5 py-2 rounded-full text-xs font-semibold transition-all border bg-white text-slate-600 border-purple-200 hover:border-aralu-lavender" data-cat="Cabello">Cabello</button>
+                <button onclick="filterCategory('Maquillaje')" class="category-btn px-5 py-2 rounded-full text-xs font-semibold transition-all border bg-white text-slate-600 border-purple-200 hover:border-aralu-lavender" data-cat="Maquillaje">Maquillaje</button>
+                <button onclick="filterCategory('Skincare')" class="category-btn px-5 py-2 rounded-full text-xs font-semibold transition-all border bg-white text-slate-600 border-purple-200 hover:border-aralu-lavender" data-cat="Skincare">Skincare</button>
+                <button onclick="filterCategory('Corporal')" class="category-btn px-5 py-2 rounded-full text-xs font-semibold transition-all border bg-white text-slate-600 border-purple-200 hover:border-aralu-lavender" data-cat="Corporal">Corporal</button>
+            </div>
+        </div>
+
+        <!-- PRODUCTS GRID -->
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Renderizado dinámico vía JavaScript -->
+        </div>
+
+    </main>
+
+    <!-- SHOPPING CART MODAL (DRAWER) -->
+    <div id="cartModal" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+
+        <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+            <div class="pointer-events-auto w-screen max-w-md">
+                <div class="flex h-full flex-col bg-white shadow-2xl">
+                    
+                    <!-- Cart Header -->
+                    <div class="p-6 bg-aralu-soft border-b border-purple-100 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-bag-shopping text-aralu-purple"></i>
+                            <h3 class="font-serif text-lg font-bold text-aralu-base">Tu Carrito de Compras</h3>
+                        </div>
+                        <button onclick="toggleCart()" class="text-slate-400 hover:text-slate-600 p-2">
+                            <i class="fa-solid fa-xmark text-xl"></i>
+                        </button>
+                    </div>
+
+                    <!-- Cart Body Items -->
+                    <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
+                        <!-- Renderizado vía JavaScript -->
+                    </div>
+
+                    <!-- Cart Footer / Checkout Form -->
+                    <div class="p-6 border-t border-slate-100 bg-slate-50 space-y-4">
+                        <div class="flex justify-between items-center text-sm font-semibold text-slate-700">
+                            <span>Total estimado:</span>
+                            <span id="cartTotal" class="text-xl font-bold text-aralu-purple">$0</span>
+                        </div>
+
+                        <!-- User Info Form -->
+                        <div class="space-y-2 pt-2">
+                            <input type="text" id="customerName" placeholder="Tu Nombre Completo *" required
+                                class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 focus:outline-none focus:border-aralu-lavender">
+                            <input type="text" id="customerCity" placeholder="Ciudad y Dirección de Envío *" required
+                                class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 focus:outline-none focus:border-aralu-lavender">
+                        </div>
+
+                        <button onclick="checkoutWhatsApp()" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Finalizar Pedido por WhatsApp
+                        </button>
+                        
+                        <p class="text-[10px] text-center text-slate-400 leading-tight">
+                            Al hacer clic se abrirá WhatsApp con el resumen de tu pedido. Coordinaremos contigo el método de pago (Nequi, Daviplata, transferencia o pago contra entrega).
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-aralu-dark text-white border-t border-purple-900 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-white block">Aralú Beauty</span>
+                    <p class="text-xs text-purple-300 mt-2 leading-relaxed">
+                        Productos de belleza, cuidado capilar, maquillaje y corporal seleccionados especialmente para hacerte brillar todos los días.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-purple-200 uppercase tracking-wider mb-3">Categorías</h4>
+                    <ul class="space-y-1.5 text-xs text-purple-300">
+                        <li><a href="#catalogo" onclick="filterCategory('Cabello')" class="hover:text-white">Cuidado Capilar</a></li>
+                        <li><a href="#catalogo" onclick="filterCategory('Maquillaje')" class="hover:text-white">Maquillaje</a></li>
+                        <li><a href="#catalogo" onclick="filterCategory('Skincare')" class="hover:text-white">Skincare Facial</a></li>
+                        <li><a href="#catalogo" onclick="filterCategory('Corporal')" class="hover:text-white">Línea Corporal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-purple-200 uppercase tracking-wider mb-3">Atención al Cliente</h4>
+                    <p class="text-xs text-purple-300 mb-2"><i class="fa-brands fa-whatsapp mr-2 text-emerald-400"></i> +57 350 707 7889</p>
+                    <p class="text-xs text-purple-300"><i class="fa-solid fa-location-dot mr-2 text-pink-400"></i> Envíos a toda Colombia</p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-purple-900/80 mt-8 pt-8 text-center text-xs text-purple-400">
+                <p>&copy; 2026 Aralú Beauty. Todos los derechos reservados. Belleza que te hace brillar.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // CONFIGURACIÓN DE WHATSAPP BUSINESS
+        const WHATSAPP_PHONE = "573507077889"; 
+
+        // BASE DE DATOS DE PRODUCTOS
+        const products = [
+            {
+                id: 1,
+                name: "SHAMPOO CRECIMIENTO Y ANTIFRIZZ CON CEBOLLA Y PÉPTIDOS MILAGROS",
+                category: "Cabello",
+                price: 39900,
+                image: "https://i.ibb.co/DPW4GcTw/image.jpg",
+                description: "Fórmula especializada de la línea Milagros para estimular el crecimiento, reducir el frizz y fortalecer la hebra capilar."
+            },
+            {
+                id: 2,
+                name: "Tratamiento Capilar Reparación Lavanda",
+                category: "Cabello",
+                price: 45000,
+                image: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80",
+                description: "Nutrición profunda con extractos naturales para devolverle la suavidad y brillo natural a tu cabello."
+            },
+            {
+                id: 3,
+                name: "Glaze Lip Gloss Neón Brillante",
+                category: "Maquillaje",
+                price: 25000,
+                image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=600&q=80",
+                description: "Brillo labial hidratante de larga duración con un suave tono rosado e iluminación Neón."
+            },
+            {
+                id: 4,
+                name: "Sérum Facial Iluminador Vitamina C",
+                category: "Skincare",
+                price: 52000,
+                image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80",
+                description: "Suero de rápida absorción que empareja el tono de la piel y aporta una luminosidad saludable."
+            },
+            {
+                id: 5,
+                name: "Exfoliante Corporal Nutritivo Lavanda & Rosa",
+                category: "Corporal",
+                price: 38000,
+                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80",
+                description: "Remueve células muertas dejando la piel suave, renovada y delicadamente perfumada."
+            },
+            {
+                id: 6,
+                name: "Mantequilla Corporal Hidratación Intensa",
+                category: "Corporal",
+                price: 42000,
+                image: "https://images.unsplash.com/photo-1608248597261-8

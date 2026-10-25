@@ -12,21 +12,9 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            purple: '#4d1253',
-                            deep: '#2d0633',
-                            light: '#9b51e0',
-                            lavender: '#e8d7f7',
-                            softBg: '#faf5ff',
-                            neonPink: '#ff3bbf',
-                            neonGlow: '#e028b0'
-                        }
+                        brand: { purple: '#4d1253', deep: '#2d0633', light: '#9b51e0', lavender: '#e8d7f7', softBg: '#faf5ff', neonPink: '#ff3bbf', neonGlow: '#e028b0' }
                     },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                        cursive: ['Great Vibes', 'cursive']
-                    }
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'], cursive: ['Great Vibes', 'cursive'] }
                 }
             }
         }
@@ -78,92 +66,40 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left space-y-6">
-                    <span class="inline-block px-4 py-1.5 bg-brand-neonPink/20 border border-brand-neonPink/50 rounded-full text-pink-300 text-xs font-bold tracking-widest uppercase shadow-sm">
-                        ✨ Tu Espacio de Cuidado y Glamour
-                    </span>
+                    <span class="inline-block px-4 py-1.5 bg-brand-neonPink/20 border border-brand-neonPink/50 rounded-full text-pink-300 text-xs font-bold tracking-widest uppercase shadow-sm">✨ Tu Espacio de Cuidado y Glamour</span>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight">
                         Belleza que te <br>
                         <span class="font-cursive text-5xl sm:text-6xl lg:text-7xl text-pink-300 neon-text-pink block mt-2">hace brillar ♥</span>
                     </h1>
-                    <p class="text-purple-100 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                        Encuentra los mejores tratamientos para tu cabello, maquillaje profesional y líneas exclusivas de cuidado facial. Realza tu esencia con Aralú Beauty.
-                    </p>
+                    <p class="text-purple-100 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">Encuentra los mejores tratamientos para tu cabello, maquillaje profesional y líneas exclusivas de cuidado facial.</p>
                     <div class="pt-4 flex flex-wrap justify-center lg:justify-start gap-4">
-                        <a href="#catalogo" class="bg-gradient-to-r from-brand-neonPink to-pink-600 hover:from-pink-600 hover:to-brand-neonPink text-white font-semibold px-8 py-3.5 rounded-full shadow-lg transition-all text-sm tracking-wide">
-                            Explorar Productos
-                        </a>
-                        <a href="#categorias" class="bg-white/10 hover:bg-white/20 text-white font-medium px-8 py-3.5 rounded-full border border-white/30 backdrop-blur-sm transition-all text-sm tracking-wide">
-                            Ver Categorías
-                        </a>
+                        <a href="#catalogo" class="bg-gradient-to-r from-brand-neonPink to-pink-600 text-white font-semibold px-8 py-3.5 rounded-full shadow-lg text-sm">Explorar Productos</a>
+                        <a href="#categorias" class="bg-white/10 hover:bg-white/20 text-white font-medium px-8 py-3.5 rounded-full border border-white/30 text-sm">Ver Categorías</a>
                     </div>
                 </div>
                 <div class="relative flex justify-center items-center">
-                    <div class="relative w-full max-w-md bg-gradient-to-b from-purple-950 to-brand-deep p-6 rounded-3xl border border-pink-500/30 shadow-2xl">
-                        <div class="text-center mb-6">
-                            <span class="font-cursive text-4xl text-pink-300">Aralú</span>
-                            <p class="text-xs tracking-widest uppercase text-pink-200">BEAUTY BOUTIQUE</p>
-                        </div>
+                    <div class="relative w-full max-w-md bg-gradient-to-b from-purple-950 to-brand-deep p-6 rounded-3xl border border-pink-500/30 shadow-2xl text-center">
+                        <span class="font-cursive text-4xl text-pink-300">Aralú</span>
+                        <p class="text-xs tracking-widest uppercase text-pink-200 mb-6">BEAUTY BOUTIQUE</p>
                         <div class="grid grid-cols-3 gap-3">
-                            <div onclick="filtrarCategoria('cabello')" class="flex flex-col items-center cursor-pointer group">
-                                <div class="w-full h-36 rounded-t-full bg-purple-900/60 border-2 border-brand-neonPink group-hover:bg-brand-neonPink/30 transition-all flex flex-col items-center justify-center p-2 text-center">
-                                    <i class="fas fa-pump-soap text-2xl text-pink-300 group-hover:scale-110 transition-transform mb-2"></i>
-                                    <span class="font-cursive text-lg text-white">Cabello</span>
-                                </div>
-                            </div>
-                            <div onclick="filtrarCategoria('maquillaje')" class="flex flex-col items-center cursor-pointer group">
-                                <div class="w-full h-36 rounded-t-full bg-purple-900/60 border-2 border-brand-neonPink group-hover:bg-brand-neonPink/30 transition-all flex flex-col items-center justify-center p-2 text-center">
-                                    <i class="fas fa-magic text-2xl text-pink-300 group-hover:scale-110 transition-transform mb-2"></i>
-                                    <span class="font-cursive text-lg text-white">Maquillaje</span>
-                                </div>
-                            </div>
-                            <div onclick="filtrarCategoria('skincare')" class="flex flex-col items-center cursor-pointer group">
-                                <div class="w-full h-36 rounded-t-full bg-purple-900/60 border-2 border-brand-neonPink group-hover:bg-brand-neonPink/30 transition-all flex flex-col items-center justify-center p-2 text-center">
-                                    <i class="fas fa-spa text-2xl text-pink-300 group-hover:scale-110 transition-transform mb-2"></i>
-                                    <span class="font-cursive text-lg text-white">Skincare</span>
-                                </div>
-                            </div>
+                            <div onclick="filtrarCategoria('cabello')" class="cursor-pointer bg-purple-900/60 p-2 rounded-t-full border-2 border-brand-neonPink text-white"><i class="fas fa-pump-soap text-pink-300 mb-1"></i><br><span class="font-cursive text-sm">Cabello</span></div>
+                            <div onclick="filtrarCategoria('maquillaje')" class="cursor-pointer bg-purple-900/60 p-2 rounded-t-full border-2 border-brand-neonPink text-white"><i class="fas fa-magic text-pink-300 mb-1"></i><br><span class="font-cursive text-sm">Maquillaje</span></div>
+                            <div onclick="filtrarCategoria('skincare')" class="cursor-pointer bg-purple-900/60 p-2 rounded-t-full border-2 border-brand-neonPink text-white"><i class="fas fa-spa text-pink-300 mb-1"></i><br><span class="font-cursive text-sm">Skincare</span></div>
                         </div>
-                        <a href="https://maps.app.goo.gl/o3CRyqvAdJCh879n7" target="_blank" class="mt-6 flex items-center justify-center gap-2 bg-gradient-to-r from-brand-purple to-purple-900 hover:from-brand-neonPink hover:to-pink-600 text-pink-100 hover:text-white py-3 rounded-xl border border-pink-500/40 transition-all shadow-md group">
-                            <i class="fas fa-map-marker-alt text-brand-neonPink group-hover:text-white transition-colors animate-bounce"></i>
-                            <span class="text-xs font-semibold">Visítanos en nuestra tienda física</span>
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="categorias" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-brand-purple">Explora por Categoría</h2>
-            <div class="w-16 h-1 bg-brand-neonPink mx-auto my-3 rounded-full"></div>
-            <p class="text-gray-600 text-sm">Haz clic en la categoría que buscas para filtrar inmediatamente nuestro catálogo.</p>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
-            <div onclick="filtrarCategoria('cabello')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-center neon-arch-card border-2 border-brand-neonPink shadow-lg flex flex-col items-center group">
-                <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 text-brand-neonPink group-hover:scale-110 transition-transform"><i class="fas fa-pump-soap text-2xl"></i></div>
-                <h3 class="font-cursive text-3xl text-white mb-1">Cabello</h3>
-                <p class="text-xs text-pink-200 font-light">Shampoos y Tratamientos</p>
-                <span class="mt-4 text-[11px] uppercase tracking-wider text-white font-bold bg-brand-neonPink px-3 py-1 rounded-full shadow">Ver Todo</span>
-            </div>
-            <div onclick="filtrarCategoria('maquillaje')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-center neon-arch-card border-2 border-brand-neonPink shadow-lg flex flex-col items-center group">
-                <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 text-brand-neonPink group-hover:scale-110 transition-transform"><i class="fas fa-heart text-2xl"></i></div>
-                <h3 class="font-cursive text-3xl text-white mb-1">Maquillaje</h3>
-                <p class="text-xs text-pink-200 font-light">Labiales y Bases</p>
-                <span class="mt-4 text-[11px] uppercase tracking-wider text-white font-bold bg-brand-neonPink px-3 py-1 rounded-full shadow">Ver Todo</span>
-            </div>
-            <div onclick="filtrarCategoria('skincare')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-center neon-arch-card border-2 border-brand-neonPink shadow-lg flex flex-col items-center group">
-                <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 text-brand-neonPink group-hover:scale-110 transition-transform"><i class="fas fa-spa text-2xl"></i></div>
-                <h3 class="font-cursive text-3xl text-white mb-1">Skincare</h3>
-                <p class="text-xs text-pink-200 font-light">Cremas y Serums</p>
-                <span class="mt-4 text-[11px] uppercase tracking-wider text-white font-bold bg-brand-neonPink px-3 py-1 rounded-full shadow">Ver Todo</span>
-            </div>
-            <div onclick="filtrarCategoria('accesorios')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-center neon-arch-card border-2 border-brand-neonPink shadow-lg flex flex-col items-center group">
-                <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 text-brand-neonPink group-hover:scale-110 transition-transform"><i class="fas fa-gem text-2xl"></i></div>
-                <h3 class="font-cursive text-3xl text-white mb-1">Accesorios</h3>
-                <p class="text-xs text-pink-200 font-light">Brochas y Espejos</p>
-                <span class="mt-4 text-[11px] uppercase tracking-wider text-white font-bold bg-brand-neonPink px-3 py-1 rounded-full shadow">Ver Todo</span>
-            </div>
+    <section id="categorias" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-serif font-bold text-brand-purple">Explora por Categoría</h2>
+        <div class="w-16 h-1 bg-brand-neonPink mx-auto my-3 rounded-full"></div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+            <div onclick="filtrarCategoria('cabello')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-white neon-arch-card border-2 border-brand-neonPink"><i class="fas fa-pump-soap text-2xl text-brand-neonPink mb-2"></i><h3 class="font-cursive text-2xl">Cabello</h3><span class="text-[10px] bg-brand-neonPink px-2.5 py-1 rounded-full font-bold">Ver Todo</span></div>
+            <div onclick="filtrarCategoria('maquillaje')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-white neon-arch-card border-2 border-brand-neonPink"><i class="fas fa-heart text-2xl text-brand-neonPink mb-2"></i><h3 class="font-cursive text-2xl">Maquillaje</h3><span class="text-[10px] bg-brand-neonPink px-2.5 py-1 rounded-full font-bold">Ver Todo</span></div>
+            <div onclick="filtrarCategoria('skincare')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-white neon-arch-card border-2 border-brand-neonPink"><i class="fas fa-spa text-2xl text-brand-neonPink mb-2"></i><h3 class="font-cursive text-2xl">Skincare</h3><span class="text-[10px] bg-brand-neonPink px-2.5 py-1 rounded-full font-bold">Ver Todo</span></div>
+            <div onclick="filtrarCategoria('accesorios')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-white neon-arch-card border-2 border-brand-neonPink"><i class="fas fa-gem text-2xl text-brand-neonPink mb-2"></i><h3 class="font-cursive text-2xl">Accesorios</h3><span class="text-[10px] bg-brand-neonPink px-2.5 py-1 rounded-full font-bold">Ver Todo</span></div>
         </div>
     </section>
 
@@ -175,56 +111,13 @@
                     <p class="text-gray-500 text-sm mt-1">Selección especial para tu rutina de belleza diaria</p>
                 </div>
                 <div class="flex flex-wrap gap-2" id="filter-buttons">
-                    <button onclick="filtrarCategoria('todas')" data-cat="todas" class="cat-btn bg-brand-purple text-white text-xs font-semibold px-4 py-2 rounded-full transition-all shadow-sm">Todas</button>
-                    <button onclick="filtrarCategoria('cabello')" data-cat="cabello" class="cat-btn bg-white hover:bg-purple-100 text-gray-700 text-xs font-semibold px-4 py-2 rounded-full transition-all border border-purple-200">Cabello</button>
-                    <button onclick="filtrarCategoria('maquillaje')" data-cat="maquillaje" class="cat-btn bg-white hover:bg-purple-100 text-gray-700 text-xs font-semibold px-4 py-2 rounded-full transition-all border border-purple-200">Maquillaje</button>
-                    <button onclick="filtrarCategoria('skincare')" data-cat="skincare" class="cat-btn bg-white hover:bg-purple-100 text-gray-700 text-xs font-semibold px-4 py-2 rounded-full transition-all border border-purple-200">Skincare</button>
-                    <button onclick="filtrarCategoria('accesorios')" data-cat="accesorios" class="cat-btn bg-white hover:bg-purple-100 text-gray-700 text-xs font-semibold px-4 py-2 rounded-full transition-all border border-purple-200">Accesorios</button>
+                    <button onclick="filtrarCategoria('todas')" data-cat="todas" class="cat-btn bg-brand-purple text-white text-xs font-semibold px-4 py-2 rounded-full shadow-sm">Todas</button>
+                    <button onclick="filtrarCategoria('cabello')" data-cat="cabello" class="cat-btn bg-white text-gray-700 text-xs font-semibold px-4 py-2 rounded-full border border-purple-200">Cabello</button>
+                    <button onclick="filtrarCategoria('maquillaje')" data-cat="maquillaje" class="cat-btn bg-white text-gray-700 text-xs font-semibold px-4 py-2 rounded-full border border-purple-200">Maquillaje</button>
+                    <button onclick="filtrarCategoria('skincare')" data-cat="skincare" class="cat-btn bg-white text-gray-700 text-xs font-semibold px-4 py-2 rounded-full border border-purple-200">Skincare</button>
+                    <button onclick="filtrarCategoria('accesorios')" data-cat="accesorios" class="cat-btn bg-white text-gray-700 text-xs font-semibold px-4 py-2 rounded-full border border-purple-200">Accesorios</button>
                 </div>
             </div>
-            <div id="grid-productos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8"></div>
+            <div id="grid-productos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
         </div>
     </section>
-
-    <section id="tienda-fisica" class="py-16 bg-gradient-to-b from-brand-softBg to-purple-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-brand-deep rounded-3xl text-white p-8 lg:p-12 shadow-2xl relative overflow-hidden border border-brand-purple">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <span class="text-brand-neonPink font-bold text-xs uppercase tracking-widest">Experiencia Aralú</span>
-                        <h2 class="text-3xl sm:text-4xl font-serif font-bold mt-2 mb-4">Visita Nuestra Boutique</h2>
-                        <p class="text-purple-100 text-sm leading-relaxed mb-6">Disfruta de un ambiente lleno de luz, aromas relajantes de lavanda y la mejor asesoría personalizada.</p>
-                        <a href="https://maps.app.goo.gl/o3CRyqvAdJCh879n7" target="_blank" class="inline-flex items-center gap-2 bg-brand-neonPink hover:bg-pink-600 text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-all shadow-lg">
-                            <i class="fas fa-directions"></i> Cómo llegar a la tienda
-                        </a>
-                    </div>
-                    <div class="relative flex justify-center">
-                        <div class="w-full max-w-sm h-80 rounded-2xl bg-gradient-to-tr from-brand-purple via-purple-900 to-brand-deep p-6 border border-pink-500/30 flex flex-col items-center justify-center text-center shadow-2xl relative overflow-hidden group">
-                            <div class="w-20 h-20 rounded-full bg-brand-neonPink/20 border-2 border-brand-neonPink flex items-center justify-center mb-4 text-brand-neonPink shadow-[0_0_20px_rgba(255,59,191,0.5)]">
-                                <i class="fas fa-store text-3xl"></i>
-                            </div>
-                            <h3 class="font-cursive text-4xl text-white mb-1">Aralú Beauty</h3>
-                            <p class="text-xs text-pink-200 tracking-widest uppercase mb-4">Tienda Física</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-brand-deep text-white border-t border-brand-purple/40 pt-12 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-[11px] text-purple-300 font-light">
-            <p>&copy; 2026 Aralú Beauty. Todos los derechos reservados. Belleza que te representa.</p>
-        </div>
-    </footer>
-
-    <div id="cart-modal" class="fixed inset-0 z-50 invisible transition-all duration-300">
-        <div id="cart-backdrop" onclick="toggleCarrito()" class="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300"></div>
-        <div id="cart-panel" class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
-            <div class="p-5 bg-brand-deep text-white flex items-center justify-between border-b border-brand-purple">
-                <div class="flex items-center gap-2"><i class="fas fa-shopping-bag text-brand-neonPink"></i><h3 class="font-serif font-bold text-lg">Tu Carrito</h3></div>
-                <button onclick="toggleCarrito()" class="text-purple-200 hover:text-white p-1 rounded-lg"><i class="fas fa-times text-xl"></i></button>
-            </div>
-            <div id="cart-items" class="flex-grow overflow-y-auto p-5 space-y-4 no-scrollbar"></div>
-            <div class="p-5 bg-gray-50 border-t border-gray-100 space-y-4">
-                <div class="flex items-center justify-between text-gray-700"><span class="text-sm font-medium">Subtotal</span><span id="ca

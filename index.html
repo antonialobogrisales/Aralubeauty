@@ -37,7 +37,6 @@
     </script>
 
     <style>
-        /* Estilos personalizados y luces neón */
         html { scroll-behavior: smooth; }
         
         .neon-text-pink {
@@ -86,13 +85,11 @@
     <header class="sticky top-0 z-40 glass-header text-white shadow-xl transition-all duration-300 border-b border-brand-purple/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo -->
             <a href="#" class="flex flex-col items-start group">
                 <span class="font-cursive text-3xl sm:text-4xl text-brand-lavender group-hover:text-pink-300 transition-colors duration-300 leading-none">Aralú</span>
                 <span class="text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase text-pink-200/90 -mt-1">BEAUTY</span>
             </a>
 
-            <!-- Menú de Navegación -->
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
                 <a href="#inicio" class="hover:text-pink-300 transition-colors py-1 border-b-2 border-transparent hover:border-pink-400">Inicio</a>
                 <a href="#categorias" class="hover:text-pink-300 transition-colors py-1 border-b-2 border-transparent hover:border-pink-400">Categorías</a>
@@ -100,13 +97,11 @@
                 <a href="#tienda-fisica" class="hover:text-pink-300 transition-colors py-1 border-b-2 border-transparent hover:border-pink-400">Nuestra Tienda</a>
             </nav>
 
-            <!-- Acciones -->
             <div class="flex items-center space-x-4">
                 <a href="https://wa.me/573507079805?text=Hola%20Aralú%20Beauty,%20quisiera%20recibir%20asesoría%20sobre%20sus%20productos" target="_blank" class="hidden sm:flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-bold px-3.5 py-2 rounded-full transition-all shadow-md hover:shadow-green-500/30 transform hover:-translate-y-0.5">
                     <i class="fab font-bold fa-whatsapp text-sm"></i> Asesoría
                 </a>
 
-                <!-- Botón Carrito -->
                 <button onclick="toggleCarrito()" class="relative p-2.5 rounded-full bg-brand-purple/60 hover:bg-brand-purple text-pink-200 hover:text-white transition-all border border-pink-400/30 focus:outline-none">
                     <i class="fas fa-shopping-bag text-xl"></i>
                     <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-neonPink text-white text-[11px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-lg border-2 border-brand-deep">0</span>
@@ -142,7 +137,6 @@
                     </div>
                 </div>
 
-                <!-- Banner Arcos Neón -->
                 <div class="relative flex justify-center items-center">
                     <div class="relative w-full max-w-md bg-gradient-to-b from-purple-950 to-brand-deep p-6 rounded-3xl border border-pink-500/30 shadow-2xl">
                         <div class="text-center mb-6">
@@ -171,7 +165,6 @@
                             </div>
                         </div>
 
-                        <!-- Botón Enlace a Google Maps / GPS -->
                         <a href="https://maps.app.goo.gl/o3CRyqvAdJCh879n7" target="_blank" class="mt-6 flex items-center justify-center gap-2 bg-gradient-to-r from-brand-purple to-purple-900 hover:from-brand-neonPink hover:to-pink-600 text-pink-100 hover:text-white py-3 rounded-xl border border-pink-500/40 transition-all shadow-md group">
                             <i class="fas fa-map-marker-alt text-brand-neonPink group-hover:text-white transition-colors animate-bounce"></i>
                             <span class="text-xs font-semibold">Visítanos en nuestra tienda física</span>
@@ -192,7 +185,6 @@
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
-            
             <div onclick="filtrarCategoria('cabello')" class="cursor-pointer bg-brand-purple rounded-t-full p-6 text-center neon-arch-card border-2 border-brand-neonPink shadow-lg flex flex-col items-center group">
                 <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 text-brand-neonPink group-hover:scale-110 transition-transform">
                     <i class="fas fa-pump-soap text-2xl"></i>
@@ -228,7 +220,6 @@
                 <p class="text-xs text-pink-200 font-light">Brochas, Espejos y Organizadores</p>
                 <span class="mt-4 text-[11px] uppercase tracking-wider text-white font-bold bg-brand-neonPink px-3 py-1 rounded-full shadow">Ver Todo</span>
             </div>
-
         </div>
     </section>
 
@@ -242,7 +233,6 @@
                     <p class="text-gray-500 text-sm mt-1">Selección especial para tu rutina de belleza diaria</p>
                 </div>
 
-                <!-- Botones de Filtro -->
                 <div class="flex flex-wrap gap-2" id="filter-buttons">
                     <button onclick="filtrarCategoria('todas')" data-cat="todas" class="cat-btn bg-brand-purple text-white text-xs font-semibold px-4 py-2 rounded-full transition-all shadow-sm">Todas</button>
                     <button onclick="filtrarCategoria('cabello')" data-cat="cabello" class="cat-btn bg-white hover:bg-purple-100 text-gray-700 text-xs font-semibold px-4 py-2 rounded-full transition-all border border-purple-200">Cabello</button>
@@ -286,4 +276,8 @@
                             </div>
                         </div>
                         <a href="https://maps.app.goo.gl/o3CRyqvAdJCh879n7" target="_blank" class="inline-flex items-center gap-2 bg-brand-neonPink hover:bg-pink-600 text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-all shadow-lg shadow-pink-500/30 transform hover:-translate-y-0.5">
-   
+                            <i class="fas fa-directions"></i> Cómo llegar a la tienda
+                        </a>
+                    </div>
+                    <div class="relative flex justify-center">
+                        <div class="w-full max-w-sm h-80 rounded-2xl bg-gradient-to-tr from-brand-purple via-purple-900 to-brand-deep p-6 border bord
